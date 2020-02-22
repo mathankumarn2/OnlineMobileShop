@@ -1,0 +1,80 @@
+﻿@model OnlineMobileShop.Entity.Account
+
+@{
+    ViewBag.Title = "SignUp";
+}
+<center>
+    @Html.ValidationSummary(true)
+    <h2>SignUp</h2>
+    @if (ViewBag.Message != null)
+    {
+        Response.Write(ViewBag.Message);
+    }
+    @using (Html.BeginForm("SignUp", "Account", FormMethod.Post))
+    {
+        <table>
+
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.Name)
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.Name)
+                    @Html.ValidationMessageFor(Model => Model.Name)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.PhoneNumber)
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.PhoneNumber)
+                    @Html.ValidationMessageFor(Model => Model.PhoneNumber)
+                </td>
+            </tr>
+            <tr>
+
+                <td>
+                    @Html.LabelFor(Model => Model.Gender)
+                </td>
+                <td>
+                    @Html.EnumDropDownListFor(Model => Model.Gender, "--Select gender--")
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.MailID)
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.MailID)
+                    @Html.ValidationMessageFor(Model => Model.MailID)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.Password)
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.Password)
+                    @Html.ValidationMessageFor(Model => Model.Password)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(Model => Model.ConfirmPassword)
+                </td>
+                <td>
+                    @Html.TextBoxFor(Model => Model.ConfirmPassword)
+                    @Html.ValidationMessageFor(Model => Model.ConfirmPassword)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Submit" />
+                </td>
+            </tr>
+        </table>
+    }
+    </center>
+  

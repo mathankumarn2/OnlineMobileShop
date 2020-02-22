@@ -1,0 +1,31 @@
+﻿
+
+@{
+    ViewBag.Title = "DisplayDetails";
+}
+@Html.ActionLink("Add new details", "Create")
+
+
+<head>
+    <style>
+        #table {
+            border-spacing: 20px;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+
+<table>
+    <tr>
+        <td>S.No</td>
+        <td>Brand </td>
+        <td>Model </td>
+        <td>Battery </td>
+        <td>Price </td>
+    </tr>
+    @foreach (System.Data.DataRow item in Model.Rows)
+    {
+        @Html.Partial("_Mobile",item)
+    }
+</table>
