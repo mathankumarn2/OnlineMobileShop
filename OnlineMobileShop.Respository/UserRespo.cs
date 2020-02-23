@@ -45,5 +45,16 @@ namespace OnlineMobileShop.Respository
         {
             return userList.Find(id => id.UserID == userID);
         }
+        public static bool Login(string mailId, string Password)
+        {
+            foreach(Account account in userList)
+            {
+                if(account.MailID == mailId && account.Password == Password)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
     }
 }

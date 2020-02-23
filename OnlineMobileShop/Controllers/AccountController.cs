@@ -33,5 +33,17 @@ namespace OnlineMobileShop.Controllers
         {
             return View();
         }
-    }
+        [HttpPost]
+        public ActionResult Login([Bind(Include = "MailID, Password")]Account account)
+        {
+            if(UserRepo.Login(account.MailId, account.Password))
+            {
+                return RedirectToAction("DisplayDetails", "Mobile");
+            }
+            else
+            {
+                return View();
+            }
+        }
+    }   
 }

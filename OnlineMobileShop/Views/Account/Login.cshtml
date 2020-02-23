@@ -4,8 +4,10 @@
     ViewBag.Title = "Login";
 }
 <center>
+    @using.BeignForm("Login","Account",FormMethod.Post)
+    {
     <h2>Login</h2>
-    <table >
+    <table>
         <tr>
             <td>
                 @Html.Label("MailID", "Mail ID")
@@ -24,8 +26,10 @@
         </tr>
         <tr>
             <td>
-                <input type="button" value="Summit" />
+                <input type="submit" value="login" />
             </td>
         </tr>
     </table>
+    }
+
 </center>
