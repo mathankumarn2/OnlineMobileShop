@@ -9,6 +9,7 @@ namespace OnlineMobileShop.Entity
    
         public int UserID { get; set; }
 
+
         [Required]
         [MaxLength(30)]
         [DisplayName("Name")]
